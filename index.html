@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meu Rastreador Financeiro</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="tela-login" class="login-overlay">
+      <div class="login-box">
+        <h2>Acesso ao Sistema</h2>
+        <p>Insira suas credenciais para gerenciar suas finanças.</p>
+
+        <form id="formLogin">
+          <div class="grupo-input">
+            <label for="loginEmail">E-mail</label>
+            <input
+              type="email"
+              id="loginEmail"
+              placeholder="seu@email.com"
+              required
+              autocomplete="email"
+            />
+          </div>
+
+          <div class="grupo-input">
+            <label for="loginSenha">Senha</label>
+            <input
+              type="password"
+              id="loginSenha"
+              placeholder="••••••••"
+              required
+              autocomplete="current-password"
+            />
+          </div>
+
+          <button type="submit" id="btnEntrar">Entrar no Sistema</button>
+        </form>
+
+        <span class="link-registro"
+          >Não tem conta?
+          <a href="#" id="btnRegistrar">Criar conta agora</a></span
+        >
+      </div>
+    </div>
+    <header>
+      <h1>Meu Rastreador Financeiro</h1>
+    </header>
+    <main class="container">
+      <!-- Bloco 1: Painel de Resumo -->
+      <section class="resumo">
+        <div class="entradas">
+          <h2>
+            <i class="fa-solid fa-circle" style="color: rgb(61, 199, 145)"></i>
+            Entradas
+          </h2>
+          <p id="totalEntradas">R$ 0,00</p>
+        </div>
+        <div class="saidas">
+          <h2>
+            <i class="fa-solid fa-circle" style="color: rgb(239, 71, 71)"></i>
+            Saídas
+          </h2>
+          <p id="totalSaidas">R$ 0,00</p>
+        </div>
+        <div class="total">
+          <h2>💰Total</h2>
+          <p id="totalGeral">R$ 0,00</p>
+        </div>
+      </section>
+
+      <!-- Bloco 2: Formulário de Adição de Transações -->
+
+      <section class="formulario">
+        <h2>Nova Transação 🚀</h2>
+        <form id="formTransacao">
+          <input
+            type="text"
+            required
+            id="descricao"
+            placeholder="Ex: Salário"
+          />
+          <input
+            type="number"
+            required
+            step="0.01"
+            id="valor"
+            placeholder="Ex: 1000"
+          />
+          <select required id="tipo">
+            <option value="" disabled selected>Selecione o tipo</option>
+            <option value="entrada">🟢 Entrada</option>
+            <option value="saida">🔴 Saída</option>
+          </select>
+          <div>
+            <label for="data">Data:</label>
+            <input type="date" id="data" required />
+          </div>
+          <button type="submit" id="btnAdicionar">Adicionar Transação</button>
+        </form>
+      </section>
+      <div class="secao-filtros">
+        <h3>Filtrar Transações</h3>
+        <div class="filtros">
+          <select id="filtroMes">
+            <option value="todos">Total Anual</option>
+            <option value="01">Janeiro</option>
+            <option value="02">Fevereiro</option>
+            <option value="03">Março</option>
+            <option value="04">Abril</option>
+            <option value="05">Maio</option>
+            <option value="06">Junho</option>
+            <option value="07">Julho</option>
+            <option value="08">Agosto</option>
+            <option value="09">Setembro</option>
+            <option value="10">Outrubro</option>
+            <option value="11">Novembro</option>
+            <option value="12">Dezembro</option>
+          </select>
+
+          <input type="number" id="filtroAno" placeholder="Ano (Ex: 2026)" />
+        </div>
+      </div>
+      <!-- Bloco 3: Histórico de Transações -->
+      <section class="historico">
+        <h2>Histórico de Transações 📋</h2>
+        <ul id="transacoes"></ul>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2026 Cláudio F. Cardoso. Todos os direitos reservados.</p>
+    </footer>
+  </body>
+
+  <script src="script.js"></script>
+</html>
