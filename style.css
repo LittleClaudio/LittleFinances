@@ -652,9 +652,29 @@ footer p {
   text-decoration: none;
 }
 
-/* Responsividade para telas menores */
-@media screen and (max-width: 600px) {
-  .login-box {
-    width: 90%;
-  }
+/* Botão de Sair Estilo Cyberpunk/Neon Red */
+.botao-sair {
+  display: flex;
+  align-items: center;
+  background: transparent;
+  color: #ff4d4d;
+  border: 1px solid rgba(255, 77, 77, 0.4);
+  padding: 0.5rem 1.2rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.botao-sair:hover {
+  background-color: #ff4d4d;
+  color: #0b0f19;
+  border-color: #ff4d4d;
+  box-shadow: 0 0 15px rgba(255, 77, 77, 0.5);
+  transform: translateY(-2px);
 }
